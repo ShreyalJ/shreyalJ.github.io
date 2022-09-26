@@ -104,6 +104,3 @@ useraccountcontrol : WORKSTATION_TRUST_ACCOUNT
 samaccounttype     : MACHINE_ACCOUNT
 objectsid          : S-1-5-21-2276919464-3290130273-2584351583-1110
 ```
-
-Get the organization units (OUs).
-
