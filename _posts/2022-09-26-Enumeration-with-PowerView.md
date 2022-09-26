@@ -67,21 +67,41 @@ SPRINT.local SPRINT.local {HYDRA-DC.SPRINT.local}
 
 To get the domain controller details run the following command.
 ```
-PS C:\Users\Administrator\Desktop> Get-DomainController
+PS C:\Users\Administrator\Desktop> Get-DomainController | select Forest, OSVersion, Name | fl
 
 
-Forest                     : SPRINT.local
-CurrentTime                : 9/26/2022 1:40:46 PM
-HighestCommittedUsn        : 20523
-OSVersion                  : Windows Server 2019 Standard Evaluation
-Roles                      : {SchemaRole, NamingRole, PdcRole, RidRole...}
-Domain                     : SPRINT.local
-IPAddress                  : fe80::709b:2415:3143:32e2%6
-SiteName                   : Default-First-Site-Name
-SyncFromAllServersCallback :
-InboundConnections         : {}
-OutboundConnections        : {}
-Name                       : HYDRA-DC.SPRINT.local
-Partitions                 : {DC=SPRINT,DC=local, CN=Configuration,DC=SPRINT,DC=local,
-                             CN=Schema,CN=Configuration,DC=SPRINT,DC=local, DC=DomainDnsZones,DC=SPRINT,DC=local...}
+Forest    : SPRINT.local
+OSVersion : Windows Server 2019 Standard Evaluation
+Name      : HYDRA-DC.SPRINT.local
+```
+
+To get the users in the current domain, use the following command. It's always better to run the command with proper specifications like using `-Identity` to mention the users, this prevents huge amount of data returning in response. 
+```
+PS C:\Users\Administrator\Desktop> Get-DomainUser -Identity jdoe, HulkSM | select logoncount, objectsid, displayname | fl
+
+
+logoncount  : 0
+objectsid   : S-1-5-21-2276919464-3290130273-2584351583-1107
+displayname : Hulk SM
+
+logoncount  : 0
+objectsid   : S-1-5-21-2276919464-3290130273-2584351583-1108
+displayname : John Doe
+```
+
+Get the computer objects in the current domain.
+
+```
+PS C:\Users\Administrator\Desktop> Get-DomainComputer | select dnshostname, useraccountcontrol, samaccounttype, objectsid | fl
+
+
+dnshostname        : HYDRA-DC.SPRINT.local
+useraccountcontrol : SERVER_TRUST_ACCOUNT, TRUSTED_FOR_DELEGATION
+samaccounttype     : MACHINE_ACCOUNT
+objectsid          : S-1-5-21-2276919464-3290130273-2584351583-1000
+
+dnshostname        : THEPRACTITIONER.SPRINT.local
+useraccountcontrol : WORKSTATION_TRUST_ACCOUNT
+samaccounttype     : MACHINE_ACCOUNT
+objectsid          : S-1-5-21-2276919464-3290130273-2584351583-1110
 ```
