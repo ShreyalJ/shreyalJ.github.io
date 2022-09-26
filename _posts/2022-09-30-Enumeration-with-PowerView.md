@@ -90,7 +90,6 @@ displayname : John Doe
 ```
 
 Get the computer objects in the current domain.
-
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainComputer | select dnshostname, useraccountcontrol, samaccounttype, objectsid | fl
 
@@ -105,4 +104,6 @@ useraccountcontrol : WORKSTATION_TRUST_ACCOUNT
 samaccounttype     : MACHINE_ACCOUNT
 objectsid          : S-1-5-21-2276919464-3290130273-2584351583-1110
 ```
+
+Get the organization units (OUs).
 
