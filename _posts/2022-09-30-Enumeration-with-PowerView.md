@@ -19,8 +19,40 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ### Get that Domain!!!
 
-To get a domain object of the present domain run the following. Get details of a partiular domain by running the command with `-Domain'.
+To get a domain object of the current domain run the following command. Get details of a partiular domain by running the command with `-Domain'.
 ```
 Get-Domain
+
+
+Forest                  : SPRINT.local
+DomainControllers       : {HYDRA-DC.SPRINT.local}
+Children                : {}
+DomainMode              : Unknown
+DomainModeLevel         : 7
+Parent                  :
+PdcRoleOwner            : HYDRA-DC.SPRINT.local
+RidRoleOwner            : HYDRA-DC.SPRINT.local
+InfrastructureRoleOwner : HYDRA-DC.SPRINT.local
+Name                    : SPRINT.local
 ```
-![2](https://user-images.githubusercontent.com/60311143/192290135-3fc70be5-ecba-4167-a17a-056cfc98c273.png)
+
+To get the domain controller details run the following command.
+```
+PS C:\Users\Administrator\Desktop> Get-DomainController
+
+
+Forest                     : SPRINT.local
+CurrentTime                : 9/26/2022 1:40:46 PM
+HighestCommittedUsn        : 20523
+OSVersion                  : Windows Server 2019 Standard Evaluation
+Roles                      : {SchemaRole, NamingRole, PdcRole, RidRole...}
+Domain                     : SPRINT.local
+IPAddress                  : fe80::709b:2415:3143:32e2%6
+SiteName                   : Default-First-Site-Name
+SyncFromAllServersCallback :
+InboundConnections         : {}
+OutboundConnections        : {}
+Name                       : HYDRA-DC.SPRINT.local
+Partitions                 : {DC=SPRINT,DC=local, CN=Configuration,DC=SPRINT,DC=local,
+                             CN=Schema,CN=Configuration,DC=SPRINT,DC=local, DC=DomainDnsZones,DC=SPRINT,DC=local...}
+```
