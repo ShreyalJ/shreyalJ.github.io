@@ -1,6 +1,6 @@
 ## Enumeration Using PowerView
 
-This blog post includes post exploitation enumeration methods using PowerView that could help in lateral movement and data hunting.
+This blog post includes post exploitation enumeration methods using PowerView that could help in lateral movement and data hunting. I will only be covering some basic domain enumeration in this part and will be covering other advance enumeration techniques in other parts.
 
 ---
 
@@ -89,7 +89,25 @@ objectsid   : S-1-5-21-2276919464-3290130273-2584351583-1108
 displayname : John Doe
 ```
 
-Get the computer objects in the current domain.
+Get the list of domain policies. The policies can be checked for other domain by specifying a domain using `-Domain`.
+```
+PS C:\Users\Administrator\Desktop> Get-DomainPolicy
+
+
+Unicode        : @{Unicode=yes}
+SystemAccess   : @{MinimumPasswordAge=1; MaximumPasswordAge=42; MinimumPasswordLength=7; PasswordComplexity=1; PasswordHistorySize=24;
+                 LockoutBadCount=0; RequireLogonToChangePassword=0; ForceLogoffWhenHourExpire=0; ClearTextPassword=0;
+                 LSAAnonymousNameLookup=0}
+KerberosPolicy : @{MaxTicketAge=10; MaxRenewAge=7; MaxServiceAge=600; MaxClockSkew=5; TicketValidateClient=1}
+RegistryValues : @{MACHINE\System\CurrentControlSet\Control\Lsa\NoLMHash=System.Object[]}
+Version        : @{signature="$CHICAGO$"; Revision=1}
+Path           : \\SPRINT.local\sysvol\SPRINT.local\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Microsoft\Windows
+                 NT\SecEdit\GptTmpl.inf
+GPOName        : {31B2F340-016D-11D2-945F-00C04FB984F9}
+GPODisplayName : Default Domain Policy
+```
+
+Get the computer objects in the current domain. 
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainComputer | select dnshostname, useraccountcontrol, samaccounttype, objectsid | fl
 
@@ -104,3 +122,43 @@ useraccountcontrol : WORKSTATION_TRUST_ACCOUNT
 samaccounttype     : MACHINE_ACCOUNT
 objectsid          : S-1-5-21-2276919464-3290130273-2584351583-1110
 ```
+
+Get the memebers of a specified group.
+```
+PS C:\Users\Administrator\Desktop> Get-DomainGroupMember -Identity "Domain Admins"
+
+
+GroupDomain             : SPRINT.local
+GroupName               : Domain Admins
+GroupDistinguishedName  : CN=Domain Admins,OU=Groups,DC=SPRINT,DC=local
+MemberDomain            : SPRINT.local
+MemberName              : HulkSM
+MemberDistinguishedName : CN=Hulk SM,CN=Users,DC=SPRINT,DC=local
+MemberObjectClass       : user
+MemberSID               : S-1-5-21-2276919464-3290130273-2584351583-1107
+
+GroupDomain             : SPRINT.local
+GroupName               : Domain Admins
+GroupDistinguishedName  : CN=Domain Admins,OU=Groups,DC=SPRINT,DC=local
+MemberDomain            : SPRINT.local
+MemberName              : Administrator
+MemberDistinguishedName : CN=Administrator,CN=Users,DC=SPRINT,DC=local
+MemberObjectClass       : user
+MemberSID               : S-1-5-21-2276919464-3290130273-2584351583-500
+```
+
+Search for all the groups a user is a part of.
+```
+PS C:\Users\Administrator\Desktop> Get-DomainGroup -MemberIdentity HulkSM | select cn
+
+cn
+--
+Denied RODC Password Replication Group
+Schema Admins
+Enterprise Admins
+Domain Users
+Group Policy Creator Owners
+Domain Admins
+```
+
+---
