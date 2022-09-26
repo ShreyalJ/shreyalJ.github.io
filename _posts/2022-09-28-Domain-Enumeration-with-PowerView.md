@@ -1,6 +1,6 @@
 ## Enumeration Using PowerView
 
-This blog post includes post exploitation enumeration methods using PowerView that could help in lateral movement and data hunting. I will only be covering some basic domain enumeration in this part and will be covering other advance enumeration techniques in other parts.
+This blog post includes post exploitation enumeration methods using PowerView that could help in lateral movement and data hunting.
 
 ---
 
