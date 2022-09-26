@@ -17,7 +17,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ![1](https://user-images.githubusercontent.com/60311143/192286179-d4a4730b-7d4d-40be-9695-315e2a2054f6.png)
 
 
-### Get that Domain!!!
+### Get that Domain!
 
 To get a domain object of the current domain run the following command. Get details of a partiular domain by running the command with `-Domain'.
 ```
@@ -53,7 +53,7 @@ RidRoleOwner            : HYDRA-DC.SPRINT.local
 InfrastructureRoleOwner : HYDRA-DC.SPRINT.local
 Name                    : SPRINT.local
 ```
-Currently I have only one domain set up in my home lab therefore the `Get-Domain` and `Get-ForestDomain` return the same results.
+Currently I have only one domain set up in my home lab therefore the `Get-Domain` and `Get-ForestDomain` cmdlets return the same results.
 The amount of data returned in real scenarios can be huge and therefore we can narrow down our results to get only the required data as below.
 
 ```
