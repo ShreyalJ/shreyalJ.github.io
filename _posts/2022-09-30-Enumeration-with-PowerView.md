@@ -21,7 +21,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 To get a domain object of the current domain run the following command. Get details of a partiular domain by running the command with `-Domain'.
 ```
-Get-Domain
+PS C:\Users\Administrator\Desktop> Get-Domain
 
 
 Forest                  : SPRINT.local
@@ -35,6 +35,35 @@ RidRoleOwner            : HYDRA-DC.SPRINT.local
 InfrastructureRoleOwner : HYDRA-DC.SPRINT.local
 Name                    : SPRINT.local
 ```
+
+To get domains present in the current forest, run the following command. Get details of a partiular forest by running the command with `-Domain'.
+
+```
+PS C:\Users\Administrator\Desktop> Get-ForestDomain
+
+
+Forest                  : SPRINT.local
+DomainControllers       : {HYDRA-DC.SPRINT.local}
+Children                : {}
+DomainMode              : Unknown
+DomainModeLevel         : 7
+Parent                  :
+PdcRoleOwner            : HYDRA-DC.SPRINT.local
+RidRoleOwner            : HYDRA-DC.SPRINT.local
+InfrastructureRoleOwner : HYDRA-DC.SPRINT.local
+Name                    : SPRINT.local
+```
+Currently I have only one domain set up in my home lab therefore the `Get-Domain` and `Get-ForestDomain` return the same results.
+The amount of data returned in real scenarios can be huge and therefore we can narrow down our results to get only the required data as below.
+
+```
+PS C:\Users\Administrator\Desktop> Get-ForestDomain | select Name, Forest, DomainControllers
+
+Name         Forest       DomainControllers
+----         ------       -----------------
+SPRINT.local SPRINT.local {HYDRA-DC.SPRINT.local}
+```
+
 
 To get the domain controller details run the following command.
 ```
