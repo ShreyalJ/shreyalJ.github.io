@@ -158,6 +158,17 @@ Users with constrained delegation set.
 Get-DomainUser -TrustedToAuth
 ```
 
+Privileged users which are not marked as sensitive or not for delegation.
+```
+PS C:\Users\Administrator\Desktop> Get-DomainUser -AllowDelegation -AdminCount | select samaccountname
+
+samaccountname
+--------------
+Administrator
+krbtgt
+HulkSM
+```
+
 #### Domain Groups
 
 Get the members of a specified group.
@@ -263,7 +274,7 @@ Get the computers with constrained delegation.
 Get-DomainComputer -TrustedToAuth | select distinguishedname, name, samaccountname, dnshostname
 ```
 
-#### Organizational Units (OUS)
+#### Organizational Units (OUs)
 
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainOU | select gplink, name, distinguishedname | fl
