@@ -36,7 +36,7 @@ InfrastructureRoleOwner : HYDRA-DC.SPRINT.local
 Name                    : SPRINT.local
 ```
 
-To get domains present in the current forest, run the following command. Get details of a partiular forest by running the command with `-Domain` parameter.
+To get domains present in the current forest, run the following command. Get details of a partiular domain by running the command with `-Domain` parameter.
 
 ```
 PS C:\Users\Administrator\Desktop> Get-ForestDomain
@@ -111,6 +111,7 @@ objectsid         : S-1-5-21-2276919464-3290130273-2584351583-1109
 cn                : SQL Service
 
 ```
+
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainUser -UACFilter ACCOUNTDISABLE | select distinguishedname, objectsid, cn | fl
 
@@ -124,7 +125,7 @@ objectsid         : S-1-5-21-2276919464-3290130273-2584351583-502
 cn                : krbtgt
 ```
 
-Get the smartcard authentication requirements.
+Get the smartcard authentication requirements. Smart cards are portable storage devices with tamper-resistant that can enhance the security of tasks such as signing in with a Windows domain account.
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainUser -UACFilter NOT_SMARTCARD_REQUIRED | select cn
 
@@ -138,7 +139,7 @@ John Doe
 SQL Service
 ```
 
-Get the accounts with no kerberos pre-authentication required(ASREP Roastable). This can help avoid roasting all the accounts in the domain.
+Get the accounts which do not require kerberos pre-authentication (ASREP Roastable). This can help avoid roasting all the accounts in the domain.
 ```
 Get-DomainUser -UACFilter DONT_REQ_PREAUTH | select cn, samaccountname
 ```
