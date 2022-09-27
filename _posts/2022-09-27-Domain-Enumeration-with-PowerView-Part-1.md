@@ -6,7 +6,7 @@ This blog post includes post exploitation enumeration methods using PowerView th
 
 ### Getting Started
 
-If you try running PowerView script with default settings and configuration, you might encounter error, one such example is below.
+If you try running PowerView script with default settings and configuration, you might encounter errors, one such example is below.
 
 ![Error ng](https://user-images.githubusercontent.com/60311143/192285693-55bb4e49-1302-465f-b691-f30044e162f1.PNG)
 
@@ -76,7 +76,7 @@ Name      : HYDRA-DC.SPRINT.local
 ```
 #### Domain Users
 
-It's always better to run the command with proper specifications like using `-Identity` to mention the users, this prevents huge amount of data being returned in response. 
+It's better to run the command with proper specifications like using `-Identity` to mention the users, this prevents huge amount of data being returned in response. 
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainUser -Identity jdoe, HulkSM | select logoncount, objectsid, displayname | fl
 
