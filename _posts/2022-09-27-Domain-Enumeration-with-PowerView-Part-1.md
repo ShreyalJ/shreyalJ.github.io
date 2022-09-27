@@ -19,7 +19,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ### Get that Domain!
 
-To get a domain object of the current domain run the following command. Get details of a partiular domain by running the command with `-Domain'.
+To get a domain object of the current domain run the following command. Get details of a partiular domain by running the command with `-Domain` parameter.
 ```
 PS C:\Users\Administrator\Desktop> Get-Domain
 
@@ -36,7 +36,7 @@ InfrastructureRoleOwner : HYDRA-DC.SPRINT.local
 Name                    : SPRINT.local
 ```
 
-To get domains present in the current forest, run the following command. Get details of a partiular forest by running the command with `-Domain'.
+To get domains present in the current forest, run the following command. Get details of a partiular forest by running the command with `-Domain` parameter.
 
 ```
 PS C:\Users\Administrator\Desktop> Get-ForestDomain
@@ -284,3 +284,6 @@ gplink            : [LDAP://CN={6AC1786C-016F-11D2-945F-00C04fB984F9},CN=Policie
 name              : Domain Controllers
 distinguishedname : OU=Domain Controllers,DC=SPRINT,DC=local
 ```
+I will be covering GPOs, ACL, Trusts and a few other topics in upcoming parts. Thanks for the read!
+
+Reference: [Powerview Documentation](https://powersploit.readthedocs.io/en/latest/Recon/). 
