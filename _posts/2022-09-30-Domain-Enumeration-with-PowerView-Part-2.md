@@ -141,3 +141,5 @@ ComputerName : localhost
 ```
 
 In the next part, I'll be covering ldap queries introduction and usage for enumeration. Thanks for the read!
+
+Reference: [Powerview Documentation](https://powersploit.readthedocs.io/en/latest/Recon/). 
