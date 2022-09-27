@@ -23,7 +23,7 @@ powershell -ep bypass
 
 ### Get that Domain!
 
-To get a domain object of the current domain run the following command. Get details of a partiular domain by running the command with `-Domain` parameter.
+To get a domain object of the current domain, run the following command. Get details of a partiular domain by running the command with `-Domain` parameter.
 ```
 PS C:\Users\Administrator\Desktop> Get-Domain
 
