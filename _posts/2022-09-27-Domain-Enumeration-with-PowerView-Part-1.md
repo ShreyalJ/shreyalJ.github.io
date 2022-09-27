@@ -1,6 +1,6 @@
 ## Domain Enumeration Using PowerView
 
-This blog post includes post exploitation enumeration methods using PowerView that could help in lateral movement and data hunting.
+This blog post includes post exploitation enumeration methods using [PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1) that could help in lateral movement and data hunting.
 
 ---
 
