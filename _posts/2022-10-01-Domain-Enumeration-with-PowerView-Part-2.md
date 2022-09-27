@@ -95,3 +95,49 @@ IdentityReferenceDomain : SPRINT.local
 IdentityReferenceDN     : CN=DnsAdmins,OU=Groups,DC=SPRINT,DC=local
 IdentityReferenceClass  : group
 ```
+
+#### Trusts
+
+Get all domain trusts(Inbound or Outbound). To get the trusts for a specific domain, use `-Domain` parameter.
+```
+Get-DomainTrust
+```
+
+Get all forest trusts for the current forest. To get the trusts for a specified forest, use `-Forest` parameter.
+```
+Get-ForestTrust
+```
+
+#### Login and Sessions
+
+Get all the Logged on user on the computers present in the current domain.
+```
+PS C:\Users\Administrator\Desktop> Get-DomainComputer | Get-NetLoggedon
+
+
+UserName     : Administrator
+LogonDomain  : SPRINT
+AuthDomains  :
+LogonServer  : HYDRA-DC
+ComputerName : HYDRA-DC.SPRINT.local
+
+UserName     : HYDRA-DC$
+LogonDomain  : SPRINT
+AuthDomains  :
+LogonServer  :
+ComputerName : HYDRA-DC.SPRINT.local
+```
+
+Get the session details on local machine or a remote machine by specifying the machine name using `-ComputerName` parameter.
+```
+PS C:\Users\Administrator\Desktop> Get-NetSession
+
+
+CName        : \\[::1]
+UserName     : Administrator
+Time         : 0
+IdleTime     : 0
+ComputerName : localhost
+```
+
+In the next part, I'll be covering ldap queries introduction and usage for enumeration. Thanks for the read!
