@@ -10,12 +10,15 @@ If you try running PowerView script with default settings and configuration, you
 
 ![Error ng](https://user-images.githubusercontent.com/60311143/192285693-55bb4e49-1302-465f-b691-f30044e162f1.PNG)
 
-We can get past this error by changing the execution policy to `RemoteSigned`. This allows running scripts.
+We can get past this error by changing the execution policy to `RemoteSigned` or `Unrestricted`. This allows running scripts.
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 ![1](https://user-images.githubusercontent.com/60311143/192286179-d4a4730b-7d4d-40be-9695-315e2a2054f6.png)
-
+Alternatively, you can bypass the Execution Policy by running the following command.
+```
+powershell -ep bypass
+```
 
 ### Get that Domain!
 
