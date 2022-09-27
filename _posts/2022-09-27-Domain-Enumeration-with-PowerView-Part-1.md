@@ -74,7 +74,7 @@ Forest    : SPRINT.local
 OSVersion : Windows Server 2019 Standard Evaluation
 Name      : HYDRA-DC.SPRINT.local
 ```
-######Domain Users
+#### Domain Users
 
 It's always better to run the command with proper specifications like using `-Identity` to mention the users, this prevents huge amount of data being returned in response. 
 ```
@@ -158,7 +158,7 @@ Users with constrained delegation set.
 Get-DomainUser -TrustedToAuth
 ```
 
-######Domain Groups
+#### Domain Groups
 
 Get the members of a specified group.
 ```
@@ -198,7 +198,7 @@ Group Policy Creator Owners
 Domain Admins
 ```
 
-######Policies
+#### Policies
 
 Get the list of domain policies. The policies can be checked for other domain by specifying a domain using `-Domain`.
 ```
@@ -230,7 +230,7 @@ MaxClockSkew         : 5
 TicketValidateClient : 1
 ```
 
-######Domain Computers
+#### Domain Computers
 
 Get the computer objects in the current domain. 
 ```
@@ -263,7 +263,7 @@ Get the computers with constrained delegation.
 Get-DomainComputer -TrustedToAuth | select distinguishedname, name, samaccountname, dnshostname
 ```
 
-######Organizational Units (OUS)
+#### Organizational Units (OUS)
 
 ```
 PS C:\Users\Administrator\Desktop> Get-DomainOU | select gplink, name, distinguishedname | fl
