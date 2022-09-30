@@ -289,6 +289,6 @@ gplink            : [LDAP://CN={6AC1786C-016F-11D2-945F-00C04fB984F9},CN=Policie
 name              : Domain Controllers
 distinguishedname : OU=Domain Controllers,DC=SPRINT,DC=local
 ```
-I will be covering GPOs, ACL, Trusts and a few other topics in upcoming parts. Thanks for the read!
+[Domain Enumeration Part 2](https://shreyalj.github.io/2022/09/30/Domain-Enumeration-with-PowerView-Part-2.html) covers GPOs, ACL, Trusts and a few other topics.
 
 Reference: [Powerview Documentation](https://powersploit.readthedocs.io/en/latest/Recon/). 
