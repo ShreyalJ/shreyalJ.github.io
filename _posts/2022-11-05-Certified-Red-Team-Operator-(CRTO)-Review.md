@@ -6,12 +6,12 @@ After passing PNPT last year and working on several network pentests and assumed
 
 ---
 
-#### Timeline
+### Timeline
 
 In July, I purchased the course and lab package with the 4 month EMI option. Then I scheduled the exam in October. 
 Please don't assume that it can take this long to prepare. The reason I took 4 months for preparation was because I was irregular in practice due to college and job stuff. Depending on individuals' prior knowledge or the time they can dedicate, a couple of months might be sufficient for some and some might take more. Since the labs can be extended, take as much time as you feel is sufficient for you.
 
-#### About The Course and Lab
+### About The Course and Lab
 
 The course is very thorough and contains every topic required to perform a successful red team assessment. You'll learn phishing, post compromise attacks, domain dominance and much more! All the sections have easy to understand reading material and all the techniques have OPSEC considerations with them. So you always know if and how your technique is going to get detected. There are some topics with videos that help with better understanding.
 
