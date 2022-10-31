@@ -25,7 +25,7 @@ The exam time provided is 48 hours and these 48 hours can be used in 4 days. Thi
 
 Alike the labs, I experienced connection issues a few times during the exam as well.
 
-### When can someone take CRTO?
+### Who can take CRTO?
 
 Please note that this is not a beginner level certification. Anyone with prior Active Directory and attacks knowledge should go for it. 
 
